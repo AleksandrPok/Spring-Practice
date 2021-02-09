@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import spring.intro.model.User;
 
 @Configuration
 @ComponentScan(basePackages = {
@@ -33,6 +34,7 @@ public class AppConfig {
         properties.put("hibernate.show_sql", "true");
         properties.put("hibernate.hbm2ddl.auto", "create-drop");
         factoryBean.setHibernateProperties(properties);
+        factoryBean.setAnnotatedClasses(User.class);
         return factoryBean;
     }
 }

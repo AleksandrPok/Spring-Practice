@@ -22,6 +22,8 @@ public class Main {
         userService.add(john);
         userService.add(jane);
 
-        System.out.println(userService.listUsers());
+        for (User user : userService.listUsers()) {
+            System.out.println(user);
+        }
     }
 }
